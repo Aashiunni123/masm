@@ -1,0 +1,55 @@
+model small data
+
+& db "Enter the first number :$"
+
+y db Oah,Odh, "Enter the second number $"
+
+z db Oah,0dh, "Result is :$"
+
+.code
+
+startup
+
+print macro a
+
+leadx, a moy ah,09h
+
+int 21h
+
+endm
+
+read macro b
+
+mov ah,01h
+
+int 21h sub al,30h
+
+mov bh,al
+
+endm
+
+print x
+
+read a
+
+movch bh
+
+print y readb
+
+print z
+
+mov al bh
+
+add al ch
+
+mov dl. al
+
+add d1,30h
+
+mov ah,02h
+
+int 21h
+
+exit
+
+end
